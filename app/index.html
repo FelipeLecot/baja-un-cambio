@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Convierte mensajes en positivos en línea con Baja un Cambio">
+    <meta name="description" content="Baja un cambio a los textos">
     <meta name="keywords" content="baja,cambio,ia,chatgpt">
     <meta name="author" content="Felipe Lecot">
     <meta name="robots" content="index, follow">
     <meta name="theme-color" content="#000000">
     <meta property="og:title" content="Baja un cambio">
-    <meta property="og:description" content="Convierte mensajes en positivos en línea con Baja un Cambio">
+    <meta property="og:description" content="Baja un cambio a los textos">
     <meta property="og:image" content="https://bajauncambio.felipelecot.com/assets/isologo-twitter.jpg">
     <meta property="og:url" content="https://bajauncambio.felipelecot.com">
     <meta property="og:site_name" content="Baja un cambio">
@@ -18,25 +18,30 @@
     <meta name="twitter:site" content="@gregoriolecot">
     <meta name="twitter:card" content="https://bajauncambio.felipelecot.com/assets/isologo-twitter.jpg">
     <meta name="twitter:title" content="Baja un cambio">
-    <meta name="twitter:description" content="Convierte mensajes en positivos en línea con Baja un Cambio">
+    <meta name="twitter:description" content="Baja un cambio a los textos">
     <meta name="twitter:image" content="https://bajauncambio.felipelecot.com/assets/isologo-twitter.jpg">
     <title>Baja un cambio</title>
     <link rel="shortcut icon" href="./assets/logo-small.png" type="image/x-icon">
-    <link rel="stylesheet" href="./assets/styles.css">
+    <link rel="stylesheet" href="./assets/styles.css?nocachekey=9475872658726358976238457628576">
     <link rel="icon" href="./assets/logo-small.png" type="image/x-icon">
     <script src="https://unpkg.com/htmx.org@1.9.9" integrity="sha384-QFjmbokDn2DjBjq+fM+8LUIVrAgqcNW2s0PjAxHETgRn9l4fvX31ZxDxvwQnyMOX" crossorigin="anonymous"></script>
+    <script src="https://unpkg.com/htmx.org/dist/ext/loading-states.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
   </head>
-  <body>
+  <body hx-ext="loading-states">
     <header>
       <img src="./assets/isologo.png" width="250" alt="Logo de Baja un cambio">
     </header>
     <main>
       <div class="card">
-          <form hx-get="/tranquilizar" hx-target="#result" hx-swap="innerHTML" hx-trigger="submit">
+          <form hx-get="/tranquilizar" hx-target="#result" hx-swap="innerHTML" hx-trigger="submit" data-loading-target="#loading" data-loading-class-remove="hidden">
             <label for="inputText">Escribe algo:</label>
             <textarea minlength="50" maxlength="500" pattern=".{50,500}" type="text" name="text" id="inputText" placeholder="Escribe aquí"></textarea>
-            <button>Enviar</button>
+            <button data-loading-disable>Enviar</button>
           </form>
+          <div id="loading" class="hidden">
+            <i class="fa-solid fa-rotate fa-spin"></i>
+          </div>
           <p id="result"></p>
       </div>
     </main>
@@ -50,7 +55,7 @@
                 <p>Creado por: <a href="https://www.twitter.com/gregoriolecot" target="_blank" referrerpolicy="no-referrer">Felipe Lecot</a></p>
             </div>
             <div class="credits">
-                <p>Ver codigo en <a href="https://github.com/FelipeLecot/baja-un-cambio" target="_blank" referrerpolicy="no-referrer">GitHub</a></p>
+                <p>Ver código en <a href="https://github.com/FelipeLecot/baja-un-cambio" target="_blank" referrerpolicy="no-referrer">GitHub</a></p>
             </div>
           </div>
           <p>Desarrollado por <a href="https://www.felipelecot.com" target="_blank" referrerpolicy="no-referrer">Felipe Lecot</a> © 2023. Todos los derechos reservados.</p>
