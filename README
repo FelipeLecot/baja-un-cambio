@@ -7,5 +7,5 @@ Basado en la app de [Julian Principe](https://twitter.com/juliancapo98), baja un
 - OpenAI's gpt-3.5-turbo-instruct model
 - Express Node.js server
 - HTMX library (Go Hypermedia)
-- Hosted on AWS Amplify
+- Hosted on AWS EC2
 - Cloudflare WAF for rate limiting
