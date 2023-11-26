@@ -26,7 +26,7 @@ app.get('/tranquilizar', async function(req, res) {
       messages: [
         {
           role: "system",
-          content: "Altera el mensaje recibido para que sea mas tranquilo y no ofenda a nadie. Por favor solo contesta con un mensaje y hacelo lo mas breve y conciso posible.",
+          content: "Te proporcionaré mensajes con un tono negativo y tu tarea será cambiar el tono para hacerlos agradables. Por favor, respeta el formato y la longitud del texto original. Mantén la voz y el mensaje. Es posible que los mensajes estén incompletos, no intentes completarlos. Simplemente reescribe lo que ya está escrito. Si consideras necesario, puedes usar emojis. Bajo ninguna circunstancia respondas al mensaje, solo reescríbelo.",
         },
         {
           role: "user",
