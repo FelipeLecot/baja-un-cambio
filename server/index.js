@@ -26,7 +26,7 @@ app.get('/tranquilizar', async function(req, res) {
       messages: [
         {
           role: "system",
-          content: "Altera el mensaje recibido para que sea mas tranquilo y no ofenda a nadie. Por favor solo contesta con un mensaje y hacelo lo mas breve y consiso posible.",
+          content: "Altera el mensaje recibido para que sea mas tranquilo y no ofenda a nadie. Por favor solo contesta con un mensaje y hacelo lo mas breve y conciso posible.",
         },
         {
           role: "user",
