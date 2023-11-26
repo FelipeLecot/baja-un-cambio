@@ -5,7 +5,6 @@ const openai = new OpenAI({apiKey: process.env.OPENAI_API_KEY});
 
 const app = express()
 app.use(bodyParser.json())
-app.use(awsServerlessExpressMiddleware.eventContext())
 
 app.use(function(req, res, next) {
   res.header("Access-Control-Allow-Origin", "*")
@@ -20,11 +19,14 @@ app.get('/tranquilizar', async function(req, res) {
   res.setHeader("Access-Control-Allow-Headers", "*");
   const { text } = req.query;
   try {
+    if (!text) throw new Error("No text provided");
+    if (text.length > 500) throw new Error("Text too long");
+    if (text.length < 1) throw new Error("Text too short");
     const completion = await openai.chat.completions.create({
       messages: [
         {
           role: "system",
-          content: "Altera todos los mensajes recibidos para que sean mas tranquilos y no ofendan",
+          content: "Altera el mensaje recibido para que sea mas tranquilo y no ofenda a nadie. Por favor solo contesta con un mensaje y hacelo lo mas breve y consiso posible.",
         },
         {
           role: "user",
@@ -36,6 +38,8 @@ app.get('/tranquilizar', async function(req, res) {
       temperature: 0.9,
       top_p: 1,
     });
+
+    if (!completion) throw new Error("No completion");
     
     res.send(`<p>${completion.choices[0].message.content}</p>`);
   }
