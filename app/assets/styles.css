@@ -32,7 +32,7 @@ textarea {
   min-height: 50px;
 }
 
-#result {
+#result, #loading {
   margin-top: 20px;
 }
 
@@ -56,4 +56,8 @@ footer {
 
 header {
   padding: 16px;
+}
+
+.hidden {
+  display: none;
 }
