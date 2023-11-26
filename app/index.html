@@ -48,12 +48,12 @@
   </header>
   <main>
     <div class="card">
-      <form hx-get="/tranquilizar" hx-target="#result" hx-swap="innerHTML" hx-trigger="submit"
+      <form id="form" hx-get="/tranquilizar" hx-target="#result" hx-swap="innerHTML" hx-trigger="submit"
         data-loading-target="#loading" data-loading-class-remove="hidden">
         <label for="inputText">Escribe algo:</label>
         <textarea minlength="50" maxlength="500" pattern=".{50,500}" type="text" name="text" id="inputText"
           placeholder="Escribe aquí"></textarea>
-        <button data-loading-disable>Enviar</button>
+        <button id="submit" data-loading-disable>Enviar</button>
       </form>
       <div id="loading" class="hidden">
         <i class="fa-solid fa-rotate fa-spin"></i>
@@ -80,6 +80,12 @@
     <p>Desarrollado por <a href="https://www.felipelecot.com" target="_blank" referrerpolicy="no-referrer">Felipe
         Lecot</a> © 2023. Todos los derechos reservados.</p>
   </footer>
+  <script>
+    document.getElementById("form").addEventListener("submit", () => {
+      gtag("event", "form_submit", {
+        prompt: document.getElementById("inputText").value,
+      });
+    })
+  </script>
 </body>
-
 </html>
