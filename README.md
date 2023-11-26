@@ -4,7 +4,7 @@ Basado en la app de [Julian Principe](https://twitter.com/juliancapo98), baja un
 [Usalo gratis aca](https://bajauncambio.felipelecot.com)
 
 # Integración
-- OpenAI's gpt-3.5-turbo-instruct model
+- OpenAI's gpt-3.5-turbo model
 - Express Node.js server
 - HTMX library (Go Hypermedia)
 - Hosted on AWS EC2
