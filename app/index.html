@@ -32,7 +32,7 @@
     </header>
     <main>
       <div class="card">
-          <form hx-get="https://api.bajauncambio.felipelecot.com/tranquilizar" hx-target="#result" hx-swap="innerHTML" hx-trigger="submit">
+          <form hx-get="/tranquilizar" hx-target="#result" hx-swap="innerHTML" hx-trigger="submit">
             <label for="inputText">Escribe algo:</label>
             <textarea minlength="50" maxlength="500" pattern=".{50,500}" type="text" name="text" id="inputText" placeholder="Escribe aquí"></textarea>
             <button>Enviar</button>
