@@ -21,7 +21,7 @@ app.get('/tranquilizar', async function(req, res) {
   try {
     if (!text) throw new Error("No text provided");
     if (text.length > 500) throw new Error("Text too long");
-    if (text.length < 1) throw new Error("Text too short");
+    if (text.length < 25) throw new Error("Text too short");
     const completion = await openai.chat.completions.create({
       messages: [
         {
