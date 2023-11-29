@@ -51,7 +51,7 @@
       <form id="form" hx-get="/tranquilizar" hx-target="#result" hx-swap="innerHTML" hx-trigger="submit"
         data-loading-target="#loading" data-loading-class-remove="hidden">
         <label for="inputText">Escribí algo:</label>
-        <textarea minlength="50" maxlength="500" pattern=".{50,500}" type="text" name="text" id="inputText"
+        <textarea minlength="25" maxlength="500" pattern=".{25,500}" type="text" name="text" id="inputText"
           placeholder="Escribí acá"></textarea>
         <button id="submit" data-loading-disable>Enviar</button>
       </form>
