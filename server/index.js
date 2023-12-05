@@ -2,6 +2,7 @@ import OpenAI from "openai";
 import express from 'express';
 import bodyParser from 'body-parser';
 import dotenv from 'dotenv';
+dotenv.config();
 const openai = new OpenAI({apiKey: process.env.OPENAI_API_KEY});
 
 const app = express()
